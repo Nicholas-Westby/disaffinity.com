@@ -142,7 +142,8 @@ input {
     position: absolute;
     left: 50vw;
     top: 50vh;
-    width: 75vw;
+    width: 80vw;
+    max-width: 1200px;
     transform: translate(-50%, -50%);
     text-align: center;
     color: #888;
