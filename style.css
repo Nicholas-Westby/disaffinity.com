@@ -18,7 +18,8 @@ body {
 }
 
 .l2,
-.l3 {
+.l3,
+.l4 {
     border: 2px solid #59625D;
     outline: 1px solid #000;
     background-color: #2B2B2D;
@@ -43,11 +44,13 @@ body {
 }
 
 .l2:has(.active),
-.l3:has(.active) {
+.l3:has(.active),
+.l4:has(.active) {
     opacity: 1;
 }
 
-.l3 {
+.l3,
+.l4 {
     left: calc(100% - 5px);
     top: -10px;
     flex-direction: column;
