@@ -142,17 +142,17 @@ input {
     position: absolute;
     left: 50vw;
     top: 50vh;
-    width: 50vw;
+    width: 75vw;
     transform: translate(-50%, -50%);
     text-align: center;
     color: #888;
     pointer-events: none;
 
     h1 {
-        font-size: 80px;
+        font-size: calc(10vmin - 5px);
     }
 
     p {
-        font-size: 40px;
+        font-size: calc(5vmin + 5px);
     }
 }
