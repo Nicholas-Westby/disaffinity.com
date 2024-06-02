@@ -41,6 +41,7 @@ body {
     border-radius: 10px;
     display: flex;
     opacity: 0;
+    pointer-events: none;
     position: absolute;
     list-style-type: none;
     padding: 0;
@@ -58,10 +59,15 @@ body {
     top: 40px;
 }
 
+.l2--ad2 {
+    left: 5px;
+}
+
 .l2:has(.active),
 .l3:has(.active),
 .l4:has(.active) {
     opacity: 1;
+    pointer-events: initial;
 }
 
 .l3,
@@ -121,13 +127,32 @@ input {
 }
 
 .author {
-    position: absolute;
-    bottom: 5px;
-    right: 5px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
     font-size: 20px;
     color: #fff;
 
     a {
         color: #4af;
+    }
+}
+
+.instructions {
+    position: absolute;
+    left: 50vw;
+    top: 50vh;
+    width: 50vw;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #888;
+    pointer-events: none;
+
+    h1 {
+        font-size: 80px;
+    }
+
+    p {
+        font-size: 40px;
     }
 }
