@@ -7,13 +7,28 @@ body {
 .l1 {
     list-style-type: none;
     display: flex;
-    gap: 10px;
     background: #F4F1EA;
-    padding: 10px;
+    padding: 0;
     margin: 0;
+
+    > li > a {
+        display: block;
+        padding: 10px 20px;
+        margin: 0 -5px;
+        border-radius: 5px;
+
+        &:has(+ ul a.active) {
+            background: #D0CEC6;
+        }
+    }
 
     & > li {
         position: relative;
+    }
+
+    a {
+        background: transparent;
+        transition: 0.5s background;
     }
 }
 
@@ -39,8 +54,8 @@ body {
 }
 
 .l2 {
-    left: 0;
-    top: 34px;
+    left: -5px;
+    top: 40px;
 }
 
 .l2:has(.active),
@@ -72,6 +87,10 @@ body {
     }
 }
 
+.l2 a:has(+ ul a.active) {
+    background: #767676;
+}
+
 .l2 a:has(+ ul) {
     position: relative;
     &:after {
@@ -85,6 +104,12 @@ body {
 
 .search {
     margin-left: 30px;
+    display: flex;
+    align-items: center;
+
+    input {
+        margin-left: 5px;
+    }
 }
 
 .ad2 {
