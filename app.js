@@ -3,7 +3,12 @@ const dataEl = document.getElementById('search-items'),
 
 let activeEl;
 
-document.querySelectorAll('.l2 a').forEach(el => {
+/**
+ * Adds each menu item to the search list.
+ *
+ * @param {HTMLElement} el - The menu item element to be processed.
+ */
+function processMenuItem(el) {
     const option = document.createElement('option'),
         text = el.innerText.trim(),
         sanitized = text.toLowerCase().replace(/[^a-z]+/g, '-'),
@@ -14,9 +19,12 @@ document.querySelectorAll('.l2 a').forEach(el => {
     el.id = id;
     option.setAttribute('data-source-id', id);
     dataEl.appendChild(option);
-});
+}
 
-searchEl.addEventListener('input', () => {
+/**
+ * Shows the menu item matching the search input text.
+ */
+function handleSearch() {
     const matchingOption = Array.from(dataEl.querySelectorAll('option'))
             .filter(el => el.value === searchEl.value)[0],
         id = matchingOption?.getAttribute('data-source-id'),
@@ -27,4 +35,14 @@ searchEl.addEventListener('input', () => {
         el.classList.add('active');
         activeEl = el;
     }
-})
+}
+
+/**
+ * Initializes the search functionality.
+ */
+function init() {
+    document.querySelectorAll('.l2 a').forEach(processMenuItem);
+    searchEl.addEventListener('input', handleSearch);
+}
+
+init();
